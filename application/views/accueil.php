@@ -10,8 +10,8 @@
     <p><h3>Liste des objet :</h3></p>
     <p>User mail : <h4><?php echo $mail; ?></h4></p>
     <p>
-        <?php for($i=0 ; $i < count($listObjet) ; $i++) { ?>
-            <p><?php echo $listObjet[$i]['nom']; ?></p>
+        <?php foreach($listObjet as $objet) { ?>
+            <p><?php echo $objet['nom']; ?></p>
         <?php } ?>
     </p>
 </body>
