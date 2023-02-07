@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Login extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,5 +21,15 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('login');
-	}		
+	}
+
+	public function index() {
+		$mail = $this->input->post('mail');
+		$mdp = $this->input->post('mdp');
+
+		$this->load->model('model_login');
+		if (checkLogin($mail, $mdp) == true) {
+			$this->load->view('accueil');
+		}
+	}	
 }
