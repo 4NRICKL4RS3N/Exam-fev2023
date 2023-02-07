@@ -11,10 +11,6 @@ class Model_Objet extends CI_Model {
         return $result;
     }
 
-    public function acceptChange($idEchange) {
-        
-    }
-
 } 
 
 ?>

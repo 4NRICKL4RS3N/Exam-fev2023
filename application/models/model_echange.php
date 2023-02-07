@@ -7,7 +7,18 @@ class Echange extends CI_Model {
     {
         $req="insert into echange values(null,%s,%s,now(),null,curdate())";
         $req=sprintf($req,$obj1,$obj2);
-        $this->db->query($req);
+        return $this->db->query($req);
+    }
+
+    public function acceptChange($idEchange) {
+        $sql = "update echange set heureaccept = now()";
+        return $this->db->query($sql);
+    }
+
+    public function denyChange($idEchange) {
+        $sql = "delete from echange where idEchange = %s";
+        $sql = sprintf($sql, $this->db->escape($idEchange));
+        return $this->db->query($sql);
     }
 }
 ?>
