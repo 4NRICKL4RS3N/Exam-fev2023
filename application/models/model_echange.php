@@ -9,5 +9,6 @@ class Echange extends CI_Model {
         $req=sprintf($req,$obj1,$obj2);
         $this->db->query($req);
     }
+
 }
 ?>

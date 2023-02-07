@@ -1,7 +1,7 @@
 <?php
 if(! defined('BASEPATH')) exit('No direct script acces allowed');
 
-class Model_Objet extends CI_Model {
+class Model_User extends CI_Model {
 
     public function getObjetByUser($idUser) {
         $sql = "select * from objet where idUser = %s";
@@ -11,10 +11,14 @@ class Model_Objet extends CI_Model {
         return $result;
     }
 
-    public function acceptChange($idEchange) {
-        
+    public function getIdByMail($mail)
+    {
+        $req="select idUser from users where mail='%s'";
+        $req=sprintf($req,$mail);
+        $query = $this->db->query($req);
+        $result = $query->row_array();
+        return $result;
     }
-
 } 
 
 ?>
