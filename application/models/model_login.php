@@ -18,6 +18,16 @@ class Login extends CI_Model {
         return $result;
     }
 
-    public 
+    public function checkLogin($mail , $mdp)
+    {
+        $listUser = getUsers();
+        for ($i=0; $i < count($listUser); $i++) { 
+            if ($list[$i]['mdp'] == $mdp && $listUser[$i]['mail'] == $mail)  
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 ?>
