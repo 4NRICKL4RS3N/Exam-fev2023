@@ -12,3 +12,4 @@ class Accueil extends CI_Controller {
         $this->load->view('accueil',$data);
     }
 }
+?>
