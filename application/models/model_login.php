@@ -18,5 +18,6 @@ class Login extends CI_Model {
         return $result;
     }
 
+    public 
 }
 ?>
