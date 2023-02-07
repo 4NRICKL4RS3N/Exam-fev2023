@@ -8,6 +8,10 @@ class Login extends CI_Controller {
 		$this->load->view('login');
 	}
 
+	public function sign_up() {
+		$this->load->view('signup');
+	}
+
 	public function log_control() {
 		$mail = $this->input->post('email');
 		$mdp = $this->input->post('mdp');

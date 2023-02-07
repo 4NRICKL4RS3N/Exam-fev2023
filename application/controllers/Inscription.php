@@ -9,7 +9,7 @@ class Inscription extends CI_Controller {
         $mail = $this->input->post('mail');
         $mdp = $this->input->post('mdp');
         $this->load->model('model_inscription');
-        addUser($nom,$mail,$mdp);
+        $this->model_inscription->addUser($nom,$mail,$mdp);
         redirect('login/index');
     }
 }

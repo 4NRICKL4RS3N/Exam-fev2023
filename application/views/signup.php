@@ -24,13 +24,18 @@
   <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="<?php echo base_url('login/log_control') ?>" method="post">
+				<form class="login100-form validate-form" action="<?php echo base_url('inscription') ?>" method="post">
 					<span class="login100-form-title p-b-26" style="color: rgb(10, 10, 30);">
 						Welcome
 					</span>
 
+                    <div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="nom">
+						<span class="focus-input100" data-placeholder="Name"></span>
+					</div>
+
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="text" name="email">
+						<input class="input100" type="text" name="mail">
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
@@ -46,18 +51,18 @@
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn" style="background-color: rgb(10, 10, 30);">
-								Login
+								Sign up
 							</button>
 						</div>
 					</div>
 
 					<div class="text-center p-t-115">
 						<span class="txt1">
-							Don’t have an account?
+							Already have an account?
 						</span>
 
-						<a class="txt2" href="<?php echo base_url('login/sign_up') ?>">
-							Sign Up
+						<a class="txt2" href="<?php echo base_url('login') ?>">
+							Log in
 						</a>
 					</div>
 				</form>
