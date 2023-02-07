@@ -15,7 +15,6 @@ class Login extends CI_Model {
         $sql = sprintf($sql, $this->db->escape($idUser));
         $query = $this->db->query($sql);
         $result = $query->row_array();
-        $test;
         return $result;
     }
 
