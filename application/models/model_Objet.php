@@ -7,7 +7,7 @@
         {
             $sql="select * from objet";
             $query = $this->db->query($sql);
-            $result = $query->row_array();
+            $result = $query->result_array();
             return $result;
         }
     }

@@ -21,8 +21,9 @@ class Accueil extends CI_Controller {
 	public function index()
     {
         $data = array();
+        $this->load->model('model_Objet');
+        $data['mail'] = $this->session->userdata('mail');
         $data['listObjet'] = $this->model_Objet->getAllObjet();
-        $data['content'] = 'accueil';
-        $this->load->view('',);
+        $this->load->view('accueil',$data);
     }
 }

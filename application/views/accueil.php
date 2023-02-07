@@ -1,7 +1,3 @@
-<?php
-    // session_start();
-    $mail=$this->session->userdata('mail');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <?php echo $mail; ?>
+    <p><h3>Liste des objet :</h3></p>
+    <p>
+        <?php for($i=0 ; $i < count($listObjet) ; $i++) { ?>
+            <p><?php echo $listObjet[$i]['nom']; ?></p>
+        <?php } ?>
+    </p>
 </body>
 </html>
