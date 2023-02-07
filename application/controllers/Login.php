@@ -23,13 +23,18 @@ class Login extends CI_Controller {
 		$this->load->view('login');
 	}
 
-	public function index() {
-		$mail = $this->input->post('mail');
+	public function log_control() {
+		$mail = $this->input->post('email');
 		$mdp = $this->input->post('mdp');
-
+		// var_dump($mail);
+		// var_dump($mdp);
 		$this->load->model('model_login');
-		if (checkLogin($mail, $mdp) == true) {
+		$f = $this->model_login->checkLogin($mail, $mdp);
+		var_dump($f) ;
+		if ($this->model_login->checkLogin($mail, $mdp) === true) {
 			$this->load->view('accueil');
+		} else {
+			redirect('login/index');
 		}
-	}	
+	}
 }

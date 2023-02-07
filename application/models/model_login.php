@@ -20,21 +20,26 @@ class Model_login extends CI_Model {
 
     public function checkLogin($mail , $mdp)
     {
-        $listUser = getUsers();
-        for ($i=0; $i < count($listUser); $i++) { 
-            if ($list[$i]['mdp'] == $mdp && $listUser[$i]['mail'] == $mail)  
+        var_dump($mail);
+        var_dump($mdp);
+        $listUser = $this->model_login->getUsers();
+        // var_dump($listUser);
+        $result = false;
+        for ($i=0; $i < count($listUser); $i++) {
+            // var_dump($listUser[$i]);
+            if ($listUser[$i]['mdp'] == $mdp && $listUser[$i]['mail'] == $mail)  
             {
-                return true;
+                $result = true;
             }
         }
-        return false;
+        return $result;
     }
 
     public function loadAdmin($mail , $mdp)
     {
-        $listUser = getUsers();
+        $listUser = $this->model_login->getUsers();
         for ($i=0; $i < count($listUser); $i++) { 
-            if ($list[$i]['mdp'] == $mdp && $listUser[$i]['mail'] == $mail && $listUser[$i]['etat'] == '1')  
+            if ($listUser[$i]['mdp'] == $mdp && $listUser[$i]['mail'] == $mail && $listUser[$i]['etat'] == '1')  
             {
                 return true;
             }
