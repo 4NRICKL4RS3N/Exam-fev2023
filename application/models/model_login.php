@@ -29,5 +29,17 @@ class Login extends CI_Model {
         }
         return false;
     }
+
+    public function loadAdmin($mail , $mdp)
+    {
+        $listUser = getUsers();
+        for ($i=0; $i < count($listUser); $i++) { 
+            if ($list[$i]['mdp'] == $mdp && $listUser[$i]['mail'] == $mail && $listUser[$i]['etat'] == '1')  
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 ?>
