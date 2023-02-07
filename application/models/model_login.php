@@ -20,8 +20,8 @@ class Model_login extends CI_Model {
 
     public function checkLogin($mail , $mdp)
     {
-        var_dump($mail);
-        var_dump($mdp);
+        // var_dump($mail);
+        // var_dump($mdp);
         $listUser = $this->model_login->getUsers();
         // var_dump($listUser);
         $result = false;

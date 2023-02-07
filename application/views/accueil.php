@@ -1,4 +1,7 @@
-<?php  ?>
+<?php
+    // session_start();
+    $mail=$this->session->userdata('mail');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,6 @@
     <title>Document</title>
 </head>
 <body>
-    rctvybjnk,l
+    <?php echo $mail; ?>
 </body>
 </html>

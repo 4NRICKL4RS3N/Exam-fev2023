@@ -11,7 +11,5 @@ class Model_inscription extends CI_Model {
         $query = $this->db->query($sql);
         return $query->affected_rows();
     }
-
 }
-
 ?>
