@@ -46,15 +46,14 @@ insert into users values(null,'Teddy','teddy@gmail.com','1234','1');
 insert into users values(null,'Anrick','anrick@gmail.com','1234','0');
 insert into users values(null,'Santatra','gasy@gmail.com','1234','0');
 
-insert into category values(null,'Sextoys');
 insert into category values(null,'Electronic');
 insert into category values(null,'High-Tech');
 insert into category values(null,'Accessoire');
 
-insert into objet values(null,2,4,'Sneakers',null,200000,'sneaker1','sneaker2');
-insert into objet values(null,2,4,'T-Shirt',null,60000,'t-shirt1','t-shirt2');
-insert into objet values(null,2,3,'I-PhoneX',null,2000000,'sneaker1','sneaker2');
-insert into objet values(null,3,3,'Bicyclette',null,250000,'sneaker1','sneaker2');
-insert into objet values(null,3,3,'Montre',null,100000,'sneaker1','sneaker2');
+insert into objet values(null,2,3,'Sneakers',null,200000,'sneaker1','sneaker2');
+insert into objet values(null,2,3,'T-Shirt',null,60000,'t-shirt1','t-shirt2');
+insert into objet values(null,2,2,'I-PhoneX',null,2000000,'sneaker1','sneaker2');
+insert into objet values(null,3,2,'Bicyclette',null,250000,'sneaker1','sneaker2');
+insert into objet values(null,3,2,'Montre',null,100000,'sneaker1','sneaker2');
 
 alter table echange drop column daty; 
