@@ -22,7 +22,7 @@ class Model_echange extends CI_Model {
     }
 
     public function nbChangeDonne() {
-        $sql = "select count(idechange) as nb from echange where heureAccept not null";
+        $sql = "select count(idechange) as nb from echange where heureAccept is not null";
         $this->db->query($sql);
         $resultset = $this->db->row_array();
         return $resultset['nb'];
