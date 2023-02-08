@@ -62,5 +62,20 @@
             $query = $this->db->query($sql);
             return $query->result_array();
         }
+
+        public function getProductAvecMarge($remise,$prix,$idUser)
+        {
+            $marge=($prix * $remise)/100;
+            $margeP=$prix + $marge;
+            $margeN=$prix - $marge;
+            $listObj=$this->model_Objet->getAllObjet($idUser);
+            $objList=array();
+            for ($i=0; $i < count($listObj); $i++) { 
+                if ($listObj[$i]['prix'] =< $margeP && $listObj[$i]['prix'] >= $margeN) {
+                    $objList=$listObj[$i];
+                }
+            }
+            return $objList;
+        }
     }
 ?>
