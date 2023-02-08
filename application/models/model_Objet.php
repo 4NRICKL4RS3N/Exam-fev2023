@@ -26,7 +26,7 @@
         public function getCategories() {
             $sql="select * from category";
             $query = $this->db->query($sql);
-            $result = $this->db->result_array();
+            $result = $query->result_array();
             return $result;
         }
 

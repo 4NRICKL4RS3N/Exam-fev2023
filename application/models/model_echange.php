@@ -27,6 +27,5 @@ class Model_echange extends CI_Model {
         $resultset = $this->db->row_array();
         return $resultset['nb'];
     }
-
 }
 ?>
