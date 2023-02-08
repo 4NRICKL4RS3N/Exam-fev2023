@@ -70,7 +70,7 @@
             $listObj=$this->model_Objet->getAllObjet($idUser);
             $objList=array();
             for ($i=0; $i < count($listObj); $i++) { 
-                if ($listObj[$i]['prix'] =< $margeP && $listObj[$i]['prix'] >= $margeN) {
+                if ($listObj[$i]['prix'] <= $margeP && $listObj[$i]['prix'] >= $margeN) {
                     $objList=$listObj[$i];
                 }
             }
