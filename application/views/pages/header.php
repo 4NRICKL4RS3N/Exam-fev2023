@@ -112,6 +112,6 @@
             </div>
          </div>
          <!-- header section end -->
-         
+         <div><p><a href="<?php echo base_url('login/log_out') ?>">Log Out</a></p></div>
       </div>
       <!-- banner bg main end -->

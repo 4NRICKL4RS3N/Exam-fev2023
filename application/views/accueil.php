@@ -1,4 +1,4 @@
-      <!-- category loop -->
+     <!-- category loop -->
       <div class="fashion_section">
          <div id="main_slider" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">

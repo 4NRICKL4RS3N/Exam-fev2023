@@ -13,7 +13,7 @@ class Model_User extends CI_Model {
 
     public function getIdByMail($mail)
     {
-        $req="select idUser from users where mail='%s'";
+        $req="select idUser from users where mail=%s";
         $req=sprintf($req,$this->db->escape($mail));
         $query = $this->db->query($req);
         $result = $query->row_array();
