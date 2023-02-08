@@ -9,6 +9,13 @@ class Model_inscription extends CI_Model {
         $query = $this->db->query($sql);
         return $this->db->affected_rows();
     }
-    
+
+    public function nbInscription() {
+        $sql = "select count(iduser) as nb from users";
+        $this->db->query($sql);
+        $resultset = $this->db->row_array();
+        return $resultset['nb'];
+    }
+
 }
 ?>

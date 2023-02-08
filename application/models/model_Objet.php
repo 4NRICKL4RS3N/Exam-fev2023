@@ -18,7 +18,7 @@
             $req="select * from objet where idUser = %s";
             $req = sprintf($req , $this->db->escape($id));
             $query = $this->db->query($req);
-            $result = $this->db->result_array();
+            $result = $this->db->row_array();
             return $result;
         }
 
@@ -27,6 +27,18 @@
             $query = $this->db->query($sql);
             $result = $this->db->result_array();
             return $result;
+        }
+
+        public function searchObjet($motcle, $cat, $idUser) {
+            $sql = "select * from objet where nom like '%%s%'";
+            if ($cat != null) {
+                $sql = $sql." and idcategory = %s ";
+                $sql = sprintf($this->db->escape($cat));
+            }
+            $sql = $sql." and idUser not %s ";
+            $sql = sprintf($this->db->escape($motcle, $idUser));
+            $this->db->query($sql);
+            return $this->db->result_array();
         }
     }
 ?>
