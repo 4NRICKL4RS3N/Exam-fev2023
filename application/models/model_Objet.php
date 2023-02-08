@@ -15,7 +15,6 @@
         public function getObjetsById($id)
         {
             $this->load->model('model_user');
-            $id = $this->model_user->getIdByMail($id);
             $req="select * from objet where idUser = %s";
             $req = sprintf($req , $this->db->escape($id));
             $query = $this->db->query($req);
