@@ -42,6 +42,15 @@ create table echange
     foreign key (idObjetUser) references objet(idObjet)
 );
 
+create table historique (
+    idHistorique int primary key auto_increment,
+    idUser int,
+    foreign key (idUser) references users(idUsers),
+    idObjet int,
+    foreign key (idObjet) references objet(idObjet),
+    daty datetime
+);
+
 insert into users values(null,'Teddy','teddy@gmail.com','1234','1');
 insert into users values(null,'Anrick','anrick@gmail.com','1234','0');
 insert into users values(null,'Santatra','gasy@gmail.com','1234','0');

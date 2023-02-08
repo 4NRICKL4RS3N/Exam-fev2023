@@ -49,11 +49,18 @@
             return $this->db->result_array();
         }
 
-        public function historicObjet($idObjet) {
-            $list_idUser = 
-            $sql_first_owner = "select * from echange e join objet o on e.idobjetuser = o. where idobjetuser = %s and heureAccept is null";
-            $sql_first_owner = sprintf($this->db->escape($idObjet));
+        public function addHistorique($idUser, $idObjet, $date) {
+            $sql = "insert into historique values (null, %s, %s, %s)";
+            $sql = sprintf($this->db->escape($idUser), $this->db->escape($idObjet), $this->db->escape($date));
+            $query = $this->db->query($sql);
+            return $query->affected_rows();
+        }
 
+        public function historicObjet($idObjet) {
+            $sql = "select * from historique where idobjet = %s";
+            $sql = sprintf($this->db->escape($idObjet));
+            $query = $this->db->query($sql);
+            return $query->result_array();
         }
     }
 ?>
