@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Echange extends CI_Controller {
 	
+    public function selectObjet() {
+        $this->load->model('model_Objet');
+        $data['objets'] = $this->model_Objet->getObjetsById($_SESSION['id']);
+        $this->load->view('selectObjet', $data);
+    }
+
 	public function index()
     {
         $idObj1 = $this->input->post('idObj1');

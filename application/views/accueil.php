@@ -11,7 +11,7 @@
                         <p class="price_text">Estimation price <span style="color: #262626;"><?php echo $objet['prix'] ?> Ar</span></p>
                         <div class="tshirt_img"><img src="images/tshirt-img.png"></div>
                         <div class="btn_main">
-                            <div class="buy_bt"><a href="#">Exchange</a></div>
+                            <div class="buy_bt"><a href="<?php echo base_url('echange/selectobjet') ?>">Exchange</a></div>
                             <div class="seemore_bt"><a href="#">Historique</a></div>
                         </div>
                     </div>
