@@ -17,7 +17,7 @@ class Login extends CI_Controller {
 		$mdp = $this->input->post('mdp');
 		$this->load->model('model_login');
 		$this->load->model('model_user');
-		$id = getIdByMail($mail);
+		$id = $this->model_user->getIdByMail($mail);
 		// $f = $this->model_login->checkLogin($mail, $mdp);
 		// var_dump($f) ;
 		if ($this->model_login->checkLogin($mail, $mdp) === true) {

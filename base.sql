@@ -56,4 +56,4 @@ insert into objet values(null,2,2,'I-PhoneX',null,2000000,'sneaker1','sneaker2')
 insert into objet values(null,3,2,'Bicyclette',null,250000,'sneaker1','sneaker2');
 insert into objet values(null,3,2,'Montre',null,100000,'sneaker1','sneaker2');
 
-alter table echange drop column daty; 
+alter table echange drop column daty;
