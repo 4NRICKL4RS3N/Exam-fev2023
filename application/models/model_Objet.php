@@ -3,11 +3,12 @@
 
     class Model_Objet extends CI_Model {
 
-        public function getAllObjet()
+        public function getAllObjet($idUser)
         {
-            $sql="select * from objet";
+            $sql = "select * from objet where idUser != %s";
+            $sql = sprintf($this->db->escape($idUser));
             $query = $this->db->query($sql);
-            $result = $query->result_array();
+            $result = $this->db->result_array();
             return $result;
         }
 
@@ -29,16 +30,30 @@
             return $result;
         }
 
+        public function getObjetByCat($idCat, $idUser) {
+            $sql = "select * from objet where idcategory = %s and idUser != %s";
+            $sql = sprintf($this->db->escape($idCat), $this->db->escape($idUser));
+            $this->db->query($sql);
+            return $this->db->result_array();
+        }
+
         public function searchObjet($motcle, $cat, $idUser) {
             $sql = "select * from objet where nom like '%%s%'";
             if ($cat != null) {
                 $sql = $sql." and idcategory = %s ";
                 $sql = sprintf($this->db->escape($cat));
             }
-            $sql = $sql." and idUser not %s ";
-            $sql = sprintf($this->db->escape($motcle, $idUser));
+            $sql = $sql." and idUser != %s ";
+            $sql = sprintf($this->db->escape($motcle),$this->db->escape($idUser));
             $this->db->query($sql);
             return $this->db->result_array();
+        }
+
+        public function historicObjet($idObjet) {
+            $list_idUser = 
+            $sql_first_owner = "select * from echange e join objet o on e.idobjetuser = o. where idobjetuser = %s and heureAccept is null";
+            $sql_first_owner = sprintf($this->db->escape($idObjet));
+
         }
     }
 ?>
