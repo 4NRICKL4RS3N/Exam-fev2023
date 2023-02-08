@@ -32,9 +32,9 @@
 
         public function getObjetByCat($idCat, $idUser) {
             $sql = "select * from objet where idcategory = %s and idUser != %s";
-            $sql = sprintf($this->db->escape($idCat), $this->db->escape($idUser));
-            $this->db->query($sql);
-            return $this->db->result_array();
+            $sql = sprintf($sql, $this->db->escape($idCat), $this->db->escape($idUser));
+            $query = $this->db->query($sql);
+            return $query->result_array();
         }
 
         public function searchObjet($motcle, $cat, $idUser) {

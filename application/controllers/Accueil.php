@@ -9,7 +9,7 @@ class Accueil extends CI_Controller {
         $this->load->model('model_Objet');
         $data['mail'] = $this->session->userdata('mail');
         $data['id'] = $this->session->userdata('id');
-        $data['listObjet'] = $this->model_Objet->getCategories();
+        $data['categories'] = $this->model_Objet->getCategories();
         $data['content'] = 'accueil';
         // echo $this->session->userdata('id');
         $this->load->view('pages/content', $data);
