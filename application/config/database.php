@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'root',
+	'hostname' => 'fdb28.awardspace.net',
+	'username' => '4259151_bdd',
+	'password' => 'z#pdx]uc0fv%rFMx',
 	'database' => 'takalo',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

@@ -4,8 +4,8 @@
             <div class="footer_menu">
                <ul>
                   <li>ETU2150</li>
-                  <li>ETU0000</li>
-                  <li>ETU0000</li>
+                  <li>ETU2196</li>
+                  <li>ETU2153</li>
                </ul>
             </div>
          </div>

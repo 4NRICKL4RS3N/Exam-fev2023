@@ -8,7 +8,7 @@ class Echange extends CI_Controller {
         $idObj2 = $this->input->get('idObj2'); 
         $this->load->model('model_echange');
         $this->model_echange->requestChange($idObj1,$idObj2);
-        // redirect('accueil'); 
+        redirect('accueil'); 
     }
 	
     public function selectObjet() {
